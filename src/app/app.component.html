@@ -1,5 +1,32 @@
 <main class="main">
-  @for(brewery of breweries; track brewery) {
-  {{ brewery | json }}
-  }
+  <h1>GeckoTech brewery</h1>
+  <img src="" />
+  <div class="search">
+    <mat-form-field class="example-form-field">
+      <mat-label>Zoek naar een stad</mat-label>
+      <input
+        matInput
+        type="text"
+        (blur)="getBreweries($event)"
+        (keyup.enter)="getBreweries($event)"
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <!-- @for(brewery of breweries; track brewery) { -->
+    <table mat-table [dataSource]="breweries">
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let brewery">{{ brewery.name }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['name']"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: ['name']"
+        (click)="openModal(row)"
+      ></tr>
+    </table>
+    <!-- } -->
+  </div>
 </main>

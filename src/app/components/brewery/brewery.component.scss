@@ -1,0 +1,58 @@
+.modal {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  border-top-right-radius: 28px;
+  border-top-left-radius: 28px;
+
+  .brewery {
+    padding: 1.5rem;
+
+    .header {
+      display: flex;
+
+      .title {
+        font-size: 22px;
+      }
+
+      mat-icon {
+        width: 2rem;
+        height: 2rem;
+        font-size: 22px;
+        margin-left: auto;
+      }
+    }
+
+    .address {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact,
+    .type {
+      display: flex;
+      flex-direction: column;
+
+      > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        mat-icon {
+          color: black;
+          width: 2rem;
+          height: 2rem;
+          font-size: 2rem;
+          margin-right: 0.5rem;
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

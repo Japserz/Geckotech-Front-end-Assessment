@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
+import { Brewery } from '../components/types/brewery';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,11 @@ export class BreweriesService {
 
   private readonly httpClient = inject(HttpClient);
 
-  getBreweries() {
-    return this.httpClient.get<any>(`${this.BREWERYURL}?per_page=3`);
+  getBreweries(city?: string) {
+    return this.httpClient.get<Brewery[]>(
+      `${this.BREWERYURL}?${
+        city ? 'by_city=' + encodeURI(city) + '&' : ''
+      }per_page=10`
+    );
   }
 }

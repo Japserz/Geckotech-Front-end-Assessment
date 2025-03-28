@@ -1,10 +1,11 @@
-.btn {
-  position: relative;
+.main {
   display: flex;
-  justify-items: center;
-  justify-content: center;
-  border-radius: 0.25rem;
-  padding: 1rem 0.5rem;
-  text-align: center;
-  cursor: pointer;
+  flex-direction: column;
+  padding: 1rem;
+
+  .search {
+    mat-form-field {
+      width: 100%;
+    }
+  }
 }

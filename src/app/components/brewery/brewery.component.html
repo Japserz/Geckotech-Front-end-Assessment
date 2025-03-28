@@ -1,1 +1,50 @@
-<p>brewery works!</p>
+<div class="modal">
+  <div class="brewery">
+    <div class="header">
+      <div class="avatar"></div>
+      <p class="title">{{ data.brewery.name }}</p>
+      <mat-icon fontIcon="close" (click)="dialogRef.close()"></mat-icon>
+    </div>
+    <div class="address">
+      <p>
+        {{ data.brewery.address_1 }}
+        {{ data.brewery.address_2 }}
+        {{ data.brewery.address_3 }}
+        <br />
+        {{ data.brewery.postal_code }}
+        {{ data.brewery.city }}
+        <br />
+        {{ data.brewery.state }}
+        <br />
+        {{ data.brewery.country }}
+      </p>
+    </div>
+    <div class="type">
+      <div>
+        <mat-icon fontIcon="star"></mat-icon>
+        <div>
+          Type
+          <span>{{ data.brewery.brewery_type }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact">
+      <div>
+        <mat-icon fontIcon="phone"></mat-icon>
+        <div>
+          Phone
+          <a [href]="'tel:' + data.brewery.phone">{{ data.brewery.phone }}</a>
+        </div>
+      </div>
+      <div>
+        <mat-icon fontIcon="language"></mat-icon>
+        <div>
+          <span>Website</span>
+          <a [href]="data.brewery.website_url">{{
+            data.brewery.website_url
+          }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
