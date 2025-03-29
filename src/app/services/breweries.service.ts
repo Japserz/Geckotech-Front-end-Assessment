@@ -10,10 +10,10 @@ export class BreweriesService {
 
   private readonly httpClient = inject(HttpClient);
 
-  getBreweries(city?: string) {
+  getBreweries(city?: string, country?: string) {
     return this.httpClient.get<Brewery[]>(
-      `${this.BREWERYURL}?${
-        city ? 'by_city=' + encodeURI(city) + '&' : ''
+      `${this.BREWERYURL}?${city ? 'by_city=' + encodeURI(city) + '&' : ''}${
+        country ? 'by_country=' + encodeURI(country) + '&' : ''
       }per_page=10`
     );
   }

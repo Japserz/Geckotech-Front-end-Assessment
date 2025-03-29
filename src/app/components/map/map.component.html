@@ -1,0 +1,10 @@
+@if (brewery && brewery.latitude && brewery.latitude) {
+<div class="map-container">
+  <google-map width="100%" height="200px" [options]="options">
+    <map-advanced-marker
+      [title]="brewery.name"
+      [position]="{ lat: brewery.latitude, lng: brewery.longitude }"
+    ></map-advanced-marker>
+  </google-map>
+</div>
+}

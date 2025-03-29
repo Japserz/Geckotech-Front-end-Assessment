@@ -9,6 +9,10 @@
 
   .brewery {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    // 100% - padding
+    height: calc(100% - 3rem);
 
     .header {
       display: flex;
@@ -30,28 +34,32 @@
       flex-direction: column;
     }
 
-    .contact,
-    .type {
+    .type,
+    .phone,
+    .website {
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      mat-icon {
+        color: black;
+        width: 2rem;
+        height: 2rem;
+        font-size: 2rem;
+        margin-right: 0.5rem;
+      }
 
       > div {
         display: flex;
-        align-items: center;
-        margin-bottom: 0.5rem;
+        flex-direction: column;
+      }
+    }
 
-        mat-icon {
-          color: black;
-          width: 2rem;
-          height: 2rem;
-          font-size: 2rem;
-          margin-right: 0.5rem;
-        }
+    .footer {
+      margin-top: auto;
 
-        > div {
-          display: flex;
-          flex-direction: column;
-        }
+      button {
+        width: 100%;
       }
     }
   }

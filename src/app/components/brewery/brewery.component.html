@@ -19,32 +19,36 @@
         {{ data.brewery.country }}
       </p>
     </div>
+    @if (data.brewery.brewery_type) {
     <div class="type">
+      <mat-icon fontIcon="star"></mat-icon>
       <div>
-        <mat-icon fontIcon="star"></mat-icon>
-        <div>
-          Type
-          <span>{{ data.brewery.brewery_type }}</span>
-        </div>
+        Type
+        <span>{{ data.brewery.brewery_type }}</span>
       </div>
     </div>
-    <div class="contact">
+    } @if (data.brewery.phone) {
+    <div class="phone">
+      <mat-icon fontIcon="phone"></mat-icon>
       <div>
-        <mat-icon fontIcon="phone"></mat-icon>
-        <div>
-          Phone
-          <a [href]="'tel:' + data.brewery.phone">{{ data.brewery.phone }}</a>
-        </div>
+        Phone
+        <a [href]="'tel:' + data.brewery.phone">{{ data.brewery.phone }}</a>
       </div>
+    </div>
+    } @if (data.brewery.website_url) {
+    <div class="website">
+      <mat-icon fontIcon="language"></mat-icon>
       <div>
-        <mat-icon fontIcon="language"></mat-icon>
-        <div>
-          <span>Website</span>
-          <a [href]="data.brewery.website_url">{{
-            data.brewery.website_url
-          }}</a>
-        </div>
+        <span>Website</span>
+        <a [href]="data.brewery.website_url">{{ data.brewery.website_url }}</a>
       </div>
+    </div>
+    }
+    <div>
+      <map [brewery]="data.brewery"></map>
+    </div>
+    <div class="footer">
+      <button mat-flat-button (click)="dialogRef.close()">Done</button>
     </div>
   </div>
 </div>
